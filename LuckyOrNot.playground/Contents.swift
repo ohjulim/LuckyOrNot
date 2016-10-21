@@ -14,12 +14,16 @@ let difference4 = abs(targetValue - jinkyu)
 
 let minimum = min(difference1, difference2, difference3, difference4)
 
-if minimum == difference1 {
+// MARK: Control Flow
+switch minimum {
+case difference1:
 	print("eunjung")
-} else if minimum == difference2 {
+case difference2:
 	print("ohju")
-} else if minimum == difference3 {
+case difference3:
 	print("sungjin")
-} else if minimum == difference4 {
+case difference4:
 	print("jinkyu")
+default:
+	break
 }
