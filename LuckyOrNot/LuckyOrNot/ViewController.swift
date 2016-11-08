@@ -17,9 +17,6 @@ class ViewController: UIViewController {
 	var lucky1 = ""
 	var lucky2 = ""
 	
-	@IBOutlet weak var lucky1Label: UILabel!
-	@IBOutlet weak var lucky2Label: UILabel!
-	
 	@IBAction func luckyOrNot() {
 		eunjung = Int(arc4random_uniform(100))
 		ohju = Int(arc4random_uniform(100))
@@ -49,12 +46,12 @@ class ViewController: UIViewController {
 		default:
 			break
 		}
-		updateLabel()
-	}
-	
-	func updateLabel() {
-		lucky1Label.text = String(lucky1)
-		lucky2Label.text = String(lucky2)
+
+		let message = "\n✔️첫번째 발표자: \(lucky1)\n✔️두번째 발표자: \(lucky2)"
+		let showAlert = UIAlertController(title: "Lucky guys!", message: message, preferredStyle: .alert)
+		let alertAction	= UIAlertAction(title: "OK", style: .default, handler: nil)
+		showAlert.addAction(alertAction)
+		present(showAlert, animated: true, completion: nil)
 	}
 
 	override func viewDidLoad() {
